@@ -3,6 +3,20 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+zipFile <- "UCI HAR Dataset.zip"
+
+if (!file.exists(zipFile)) {
+        download.file(url, zipFile, mode = "wb")
+}
+
+# unzip zip file containing data if data directory doesn't already exist
+dataPath <- "UCI HAR Dataset"
+if (!file.exists(dataPath)) {
+        unzip(zipFile)
+}
+
+
 ## Read label names for the observations
 features <- read.table("./UCI HAR Dataset/features.txt", header = FALSE)
 
