@@ -82,7 +82,7 @@ meanStdwActivityNamesMean <- meanStdwActivityNames %>%
                              summarize_all(funs(mean))
 
 
-write.table(meanStdwActivityNamesMean, "./getting_cleaning_project/tidy_data.txt", sep = "\t", quote = FALSE)
+write.table(meanStdwActivityNamesMean, "./getting_cleaning_project/tidy_data.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 
 
 
